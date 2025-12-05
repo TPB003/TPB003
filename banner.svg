@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1600" height="600" viewBox="0 0 1600 600"
+     xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ========= 样式 & 动画 ========= -->
+  <style>
+    .bg {
+      fill: #ffd94a; /* 明亮黄色背景 */
+    }
+    .device {
+      fill: #ffd94a;
+      stroke: #222222;
+      stroke-width: 6;
+      stroke-linejoin: round;
+    }
+    .screen {
+      fill: #222222;
+      stroke: #222222;
+      stroke-width: 4;
+    }
+    .wire {
+      fill: none;
+      stroke: #222222;
+      stroke-width: 6;
+      stroke-linecap: round;
+      stroke-dasharray: 18 18;
+      animation: dash 2s linear infinite;
+    }
+    .wire-slow {
+      animation-duration: 3.5s;
+    }
+    .node {
+      fill: #222222;
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    .node-alt {
+      animation-duration: 2s;
+      animation-delay: .4s;
+    }
+    .text-main {
+      font-family: "JetBrains Mono", "Fira Code", monospace;
+      font-size: 42px;
+      fill: #222222;
+      letter-spacing: 3px;
+    }
+    .text-sub {
+      font-family: "JetBrains Mono", "Fira Code", monospace;
+      font-size: 24px;
+      fill: #222222;
+      letter-spacing: 2px;
+    }
+
+    @keyframes dash {
+      to { stroke-dashoffset: -72; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; r: 7; }
+      50%      { opacity: 1.0; r: 10; }
+    }
+  </style>
+
+  <!-- ========= 背景 ========= -->
+  <rect class="bg" x="0" y="0" width="1600" height="600" rx="0" />
+
+  <!-- ========= 中央主屏（核心节点） ========= -->
+  <g transform="translate(650, 190)">
+    <!-- 外框 -->
+    <rect class="device" x="-170" y="-110" width="340" height="220" rx="18" />
+    <!-- 屏幕 -->
+    <rect class="screen" x="-150" y="-90" width="300" height="180" rx="10" />
+    <!-- 标题块 -->
+    <rect x="-140" y="-80" width="140" height="60" rx="10"
+          fill="#ffd94a" stroke="#222222" stroke-width="4" />
+    <text x="-132" y="-42" class="text-main">CHRIS</text>
+
+    <!-- 副标题 -->
+    <rect x="-140" y="0" width="220" height="50" rx="10"
+          fill="#ffd94a" stroke="#222222" stroke-width="4" />
+    <text x="-132" y="34" class="text-sub">C++  ·  Qt  ·  Web3</text>
+  </g>
+
+  <!-- ========= 左侧设备 ========= -->
+  <!-- 左上音箱 -->
+  <g transform="translate(220, 150)">
+    <rect class="device" x="-80" y="-80" width="160" height="160" rx="20" />
+    <circle class="screen" cx="0" cy="-20" r="32" />
+    <circle class="screen" cx="0" cy="42" r="14" />
+  </g>
+
+  <!-- 左中手机 -->
+  <g transform="translate(360, 310)">
+    <rect class="device" x="-60" y="-100" width="120" height="180" rx="24" />
+    <rect class="screen" x="-44" y="-72" width="88" height="120" rx="12" />
+  </g>
+
+  <!-- 左下相机 -->
+  <g transform="translate(260, 430)">
+    <rect class="device" x="-70" y="-45" width="140" height="90" rx="18" />
+    <circle class="screen" cx="-18" cy="0" r="26" />
+  </g>
+
+  <!-- ========= 右侧设备 ========= -->
+  <!-- 右上音箱 -->
+  <g transform="translate(1380, 150)">
+    <rect class="device" x="-80" y="-80" width="160" height="160" rx="20" />
+    <circle class="screen" cx="0" cy="-20" r="32" />
+    <circle class="screen" cx="0" cy="42" r="14" />
+  </g>
+
+  <!-- 右中笔电 -->
+  <g transform="translate(1220, 330)">
+    <rect class="device" x="-100" y="-70" width="200" height="110" rx="20" />
+    <rect class="screen" x="-88" y="-58" width="176" height="86" rx="10" />
+  </g>
+
+  <!-- 右下小设备 -->
+  <g transform="translate(1380, 430)">
+    <rect class="device" x="-60" y="-40" width="120" height="80" rx="18" />
+    <rect class="screen" x="-42" y="-22" width="84" height="44" rx="8" />
+  </g>
+
+  <!-- ========= 电路连线（带动画的线） ========= -->
+  <!-- 左侧到中心 -->
+  <path class="wire"
+        d="M 300 150 L 300 80 L 650 80 L 650 190" />
+  <path class="wire wire-slow"
+        d="M 360 210 L 360 260 L 520 260 L 520 190" />
+  <path class="wire"
+        d="M 260 430 L 260 360 L 520 360 L 520 310" />
+
+  <!-- 右侧到中心 -->
+  <path class="wire wire-slow"
+        d="M 1300 150 L 1300 80 L 950 80 L 950 190" />
+  <path class="wire"
+        d="M 1220 260 L 1220 220 L 1080 220 L 1080 190" />
+  <path class="wire wire-slow"
+        d="M 1380 430 L 1380 360 L 1080 360 L 1080 310" />
+
+  <!-- 底部横向连接条 -->
+  <path class="wire"
+        d="M 260 500 L 1340 500" />
+
+  <!-- ========= 节点小圆点（呼吸动画） ========= -->
+  <circle class="node" cx="300" cy="150" r="8" />
+  <circle class="node node-alt" cx="360" cy="210" r="8" />
+  <circle class="node" cx="260" cy="430" r="8" />
+
+  <circle class="node node-alt" cx="1300" cy="150" r="8" />
+  <circle class="node" cx="1220" cy="260" r="8" />
+  <circle class="node node-alt" cx="1380" cy="430" r="8" />
+
+  <circle class="node" cx="650" cy="80" r="8" />
+  <circle class="node node-alt" cx="950" cy="80" r="8" />
+  <circle class="node" cx="520" cy="260" r="8" />
+  <circle class="node node-alt" cx="1080" cy="220" r="8" />
+  <circle class="node" cx="520" cy="360" r="8" />
+  <circle class="node node-alt" cx="1080" cy="360" r="8" />
+
+</svg>
