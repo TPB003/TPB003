@@ -1,9 +1,3 @@
-<!-- ===== Animated Circuit Banner ===== -->
-<p align="center">
-  <!-- 将 BANNER_LINK_HERE 替换成你上传 banner.svg 后的 RAW 链接 -->
-  <img src="https://raw.githubusercontent.com/TPB003/TPB003/refs/heads/main/banner.svg" width="100%" />
-</p>
-
 <!-- 个人 Banner（超炫光效） -->
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=8A2BE2&height=250&section=header&text=TPB003&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=40" />
@@ -15,7 +9,12 @@
 </p>
 
 ---
-
+<!-- ===== Animated Circuit Banner ===== -->
+<p align="center">
+  <!-- 将 BANNER_LINK_HERE 替换成你上传 banner.svg 后的 RAW 链接 -->
+  <img src="https://raw.githubusercontent.com/TPB003/TPB003/refs/heads/main/banner.svg" width="100%" />
+</p>
+---
 <!-- 中心动画 Logo -->
 <p align="center">
   <img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" />
