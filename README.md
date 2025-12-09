@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="[BANNER_LINK_HERE](https://raw.githubusercontent.com/TPB003/TPB003/refs/heads/main/banner.svg)" width="100%" />
+</p>
+
 <!-- 个人 Banner（超炫光效） -->
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=8A2BE2&height=250&section=header&text=TPB003&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=40" />
@@ -24,7 +28,3 @@
 </p>
 
 ---
-
-<!-- 动态粒子背景 -->
-<p align="center">
-  <img src="https://github.com/DenverCoder1/DenverCoder1/b
