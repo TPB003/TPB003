@@ -1,5 +1,7 @@
+<!-- ===== Animated Circuit Banner ===== -->
 <p align="center">
-  <img src="[BANNER_LINK_HERE](https://raw.githubusercontent.com/TPB003/TPB003/refs/heads/main/banner.svg)" width="100%" />
+  <!-- 将 BANNER_LINK_HERE 替换成你上传 banner.svg 后的 RAW 链接 -->
+  <img src="https://raw.githubusercontent.com/TPB003/TPB003/refs/heads/main/banner.svg" width="100%" />
 </p>
 
 <!-- 个人 Banner（超炫光效） -->
