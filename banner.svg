@@ -1,160 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="1600" height="600" viewBox="0 0 1600 600"
+<svg width="1980" height="600" viewBox="0 0 1600 600"
      xmlns="http://www.w3.org/2000/svg">
 
-  <!-- ========= 样式 & 动画 ========= -->
+  <!-- ========== 样式 & 动画 ========== -->
   <style>
     .bg {
-      fill: #ffd94a; /* 明亮黄色背景 */
+      fill: #ffd94a; /* 黄色背景 */
     }
+
     .device {
       fill: #ffd94a;
       stroke: #222222;
-      stroke-width: 6;
+      stroke-width: 5;
       stroke-linejoin: round;
     }
+
     .screen {
       fill: #222222;
       stroke: #222222;
-      stroke-width: 4;
+      stroke-width: 3;
     }
+
+    .detail-light {
+      fill: #ffd94a;
+      stroke: #222222;
+      stroke-width: 2;
+    }
+
+    .key {
+      fill: #ffd94a;
+      stroke: #222222;
+      stroke-width: 1.5;
+    }
+
     .wire {
       fill: none;
       stroke: #222222;
-      stroke-width: 6;
+      stroke-width: 5;
       stroke-linecap: round;
-      stroke-dasharray: 18 18;
-      animation: dash 2s linear infinite;
+      stroke-dasharray: 16 16;
+      animation: dash 2.8s linear infinite;
     }
+
     .wire-slow {
-      animation-duration: 3.5s;
+      animation-duration: 4.2s;
     }
+
     .node {
       fill: #222222;
-      animation: pulse 1.4s ease-in-out infinite;
+      animation: pulse 1.5s ease-in-out infinite;
     }
+
     .node-alt {
-      animation-duration: 2s;
+      animation-duration: 2.1s;
       animation-delay: .4s;
     }
+
     .text-main {
-      font-family: "JetBrains Mono", "Fira Code", monospace;
-      font-size: 42px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                   "Segoe UI", Roboto, sans-serif;
+      font-weight: 800;
+      font-size: 64px;
       fill: #222222;
-      letter-spacing: 3px;
-    }
-    .text-sub {
-      font-family: "JetBrains Mono", "Fira Code", monospace;
-      font-size: 24px;
-      fill: #222222;
-      letter-spacing: 2px;
+      letter-spacing: 6px;
     }
 
     @keyframes dash {
-      to { stroke-dashoffset: -72; }
+      to { stroke-dashoffset: -64; }
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 0.4; r: 7; }
-      50%      { opacity: 1.0; r: 10; }
+      0%,100% { opacity: .45; r: 7; }
+      50%     { opacity: 1;   r: 11; }
     }
   </style>
 
-  <!-- ========= 背景 ========= -->
-  <rect class="bg" x="0" y="0" width="1600" height="600" rx="0" />
+  <!-- ========== 背景 ========== -->
+  <rect class="bg" x="0" y="0" width="1600" height="600" />
 
-  <!-- ========= 中央主屏（核心节点） ========= -->
-  <g transform="translate(650, 190)">
+  <!-- ========== 中央：主显示器（CHRIS） ========== -->
+  <g transform="translate(800, 260)">
     <!-- 外框 -->
-    <rect class="device" x="-170" y="-110" width="340" height="220" rx="18" />
+    <rect class="device" x="-210" y="-130" width="420" height="260" rx="26" />
     <!-- 屏幕 -->
-    <rect class="screen" x="-150" y="-90" width="300" height="180" rx="10" />
-    <!-- 标题块 -->
-    <rect x="-140" y="-80" width="140" height="60" rx="10"
+    <rect class="screen" x="-188" y="-108" width="376" height="190" rx="16" />
+    <!-- 顶部标签栏 -->
+    <rect class="detail-light" x="-188" y="-108" width="376" height="26" rx="16" />
+    <circle class="screen" cx="-172" cy="-95" r="4" />
+    <circle class="screen" cx="-160" cy="-95" r="4" />
+    <circle class="screen" cx="-148" cy="-95" r="4" />
+    <!-- 屏幕内部几条“代码” -->
+    <rect class="detail-light" x="-172" y="-70" width="160" height="10" rx="4" />
+    <rect class="detail-light" x="-172" y="-50" width="190" height="10" rx="4" />
+    <rect class="detail-light" x="-172" y="-30" width="140" height="10" rx="4" />
+    <rect class="detail-light" x="10" y="-70" width="140" height="10" rx="4" />
+    <rect class="detail-light" x="10" y="-50" width="110" height="10" rx="4" />
+
+    <!-- 中央 CHRIS 块 -->
+    <rect x="-140" y="0" width="280" height="86" rx="18"
           fill="#ffd94a" stroke="#222222" stroke-width="4" />
-    <text x="-132" y="-42" class="text-main">CHRIS</text>
+    <text x="0" y="54" text-anchor="middle" class="text-main">CHRIS</text>
 
-    <!-- 副标题 -->
-    <rect x="-140" y="0" width="220" height="50" rx="10"
-          fill="#ffd94a" stroke="#222222" stroke-width="4" />
-    <text x="-132" y="34" class="text-sub">C++  ·  Qt  ·  Web3</text>
+    <!-- 底部支架 -->
+    <rect class="device" x="-60" y="100" width="120" height="16" rx="8" />
+    <rect class="device" x="-40" y="116" width="80" height="30" rx="10" />
   </g>
 
-  <!-- ========= 左侧设备 ========= -->
-  <!-- 左上音箱 -->
-  <g transform="translate(220, 150)">
-    <rect class="device" x="-80" y="-80" width="160" height="160" rx="20" />
-    <circle class="screen" cx="0" cy="-20" r="32" />
-    <circle class="screen" cx="0" cy="42" r="14" />
+  <!-- ========== 左上：竖置平板（终端面板） ========== -->
+  <g transform="translate(330, 150)">
+    <rect class="device" x="-70" y="-90" width="140" height="180" rx="26" />
+    <rect class="screen" x="-54" y="-68" width="108" height="136" rx="12" />
+    <!-- 顶部状态栏 -->
+    <rect class="detail-light" x="-54" y="-68" width="108" height="18" rx="12" />
+    <circle class="screen" cx="-40" cy="-59" r="3" />
+    <circle class="screen" cx="-30" cy="-59" r="3" />
+    <circle class="screen" cx="-20" cy="-59" r="3" />
+    <!-- 内部三行“命令行” -->
+    <rect class="detail-light" x="-44" y="-38" width="88" height="10" rx="4" />
+    <rect class="detail-light" x="-44" y="-18" width="70" height="10" rx="4" />
+    <rect class="detail-light" x="-44" y="2" width="82" height="10" rx="4" />
   </g>
 
-  <!-- 左中手机 -->
-  <g transform="translate(360, 310)">
-    <rect class="device" x="-60" y="-100" width="120" height="180" rx="24" />
-    <rect class="screen" x="-44" y="-72" width="88" height="120" rx="12" />
+  <!-- ========== 左中：小终端窗口 ========== -->
+  <g transform="translate(260, 290)">
+    <rect class="device" x="-70" y="-50" width="140" height="100" rx="18" />
+    <rect class="screen" x="-56" y="-36" width="112" height="72" rx="10" />
+    <rect class="detail-light" x="-56" y="-36" width="112" height="16" rx="10" />
+    <rect class="detail-light" x="-46" y="-12" width="60" height="8" rx="4" />
+    <rect class="detail-light" x="-46" y="6" width="84" height="8" rx="4" />
   </g>
 
-  <!-- 左下相机 -->
-  <g transform="translate(260, 430)">
-    <rect class="device" x="-70" y="-45" width="140" height="90" rx="18" />
-    <circle class="screen" cx="-18" cy="0" r="26" />
+  <!-- ========== 左下：键盘 ========== -->
+  <g transform="translate(380, 430)">
+    <rect class="device" x="-130" y="-40" width="260" height="80" rx="18" />
+    <!-- 键盘键帽 -->
+    <g transform="translate(-112,-26)">
+      <!-- 4x3 键阵列 -->
+      <rect class="key" x="0"   y="0" width="34" height="18" rx="3" />
+      <rect class="key" x="40"  y="0" width="34" height="18" rx="3" />
+      <rect class="key" x="80"  y="0" width="34" height="18" rx="3" />
+      <rect class="key" x="120" y="0" width="34" height="18" rx="3" />
+
+      <rect class="key" x="0"   y="22" width="34" height="18" rx="3" />
+      <rect class="key" x="40"  y="22" width="34" height="18" rx="3" />
+      <rect class="key" x="80"  y="22" width="34" height="18" rx="3" />
+      <rect class="key" x="120" y="22" width="34" height="18" rx="3" />
+
+      <rect class="key" x="0"   y="44" width="54" height="18" rx="3" />
+      <rect class="key" x="60"  y="44" width="54" height="18" rx="3" />
+      <rect class="key" x="120" y="44" width="34" height="18" rx="3" />
+    </g>
   </g>
 
-  <!-- ========= 右侧设备 ========= -->
-  <!-- 右上音箱 -->
-  <g transform="translate(1380, 150)">
-    <rect class="device" x="-80" y="-80" width="160" height="160" rx="20" />
-    <circle class="screen" cx="0" cy="-20" r="32" />
-    <circle class="screen" cx="0" cy="42" r="14" />
+  <!-- ========== 左下角：小笔记本本子 ========== -->
+  <g transform="translate(160, 430)">
+    <rect class="device" x="-60" y="-70" width="120" height="140" rx="18" />
+    <rect class="screen" x="-46" y="-52" width="92" height="104" rx="10" />
+    <rect class="detail-light" x="-40" y="-44" width="64" height="16" rx="6" />
+    <rect class="detail-light" x="-40" y="-18" width="72" height="10" rx="5" />
   </g>
 
-  <!-- 右中笔电 -->
-  <g transform="translate(1220, 330)">
-    <rect class="device" x="-100" y="-70" width="200" height="110" rx="20" />
-    <rect class="screen" x="-88" y="-58" width="176" height="86" rx="10" />
+  <!-- ========== 右上：竖向手机 / 消息终端 ========== -->
+  <g transform="translate(1270, 150)">
+    <rect class="device" x="-60" y="-90" width="120" height="180" rx="26" />
+    <rect class="screen" x="-46" y="-68" width="92" height="136" rx="14" />
+    <rect class="detail-light" x="-46" y="-68" width="92" height="20" rx="14" />
+    <rect class="detail-light" x="-38" y="-38" width="76" height="10" rx="4" />
+    <rect class="detail-light" x="-38" y="-18" width="68" height="10" rx="4" />
+    <rect class="detail-light" x="-38" y="2" width="82" height="10" rx="4" />
   </g>
 
-  <!-- 右下小设备 -->
-  <g transform="translate(1380, 430)">
-    <rect class="device" x="-60" y="-40" width="120" height="80" rx="18" />
-    <rect class="screen" x="-42" y="-22" width="84" height="44" rx="8" />
+  <!-- ========== 右中：笔记本电脑 ========== -->
+  <g transform="translate(1350, 310)">
+    <!-- 屏幕部分 -->
+    <rect class="device" x="-110" y="-70" width="220" height="110" rx="18" />
+    <rect class="screen" x="-96" y="-58" width="192" height="86" rx="10" />
+    <!-- 屏幕内容 -->
+    <rect class="detail-light" x="-88" y="-50" width="80" height="12" rx="4" />
+    <rect class="detail-light" x="-88" y="-32" width="96" height="10" rx="4" />
+    <rect class="detail-light" x="10" y="-50" width="70" height="12" rx="4" />
+    <rect class="detail-light" x="10" y="-32" width="84" height="10" rx="4" />
+    <!-- 底部键盘 -->
+    <rect class="device" x="-90" y="40" width="180" height="22" rx="10" />
   </g>
 
-  <!-- ========= 电路连线（带动画的线） ========= -->
-  <!-- 左侧到中心 -->
+  <!-- ========== 右下：双风扇“服务器模块” ========== -->
+  <g transform="translate(1230, 440)">
+    <rect class="device" x="-120" y="-52" width="240" height="104" rx="24" />
+    <circle class="screen" cx="-52" cy="0" r="26" />
+    <circle class="screen" cx="52" cy="0" r="26" />
+    <circle class="detail-light" cx="-52" cy="0" r="10" />
+    <circle class="detail-light" cx="52" cy="0" r="10" />
+  </g>
+
+  <!-- ========== 中下：机架服务器条 ========== -->
+  <g transform="translate(800, 520)">
+    <rect class="device" x="-260" y="-40" width="520" height="80" rx="18" />
+    <!-- 左侧指示灯与小屏 -->
+    <rect class="screen" x="-242" y="-24" width="110" height="48" rx="8" />
+    <circle class="detail-light" cx="-232" cy="-12" r="5" />
+    <circle class="detail-light" cx="-212" cy="-12" r="5" />
+    <circle class="detail-light" cx="-192" cy="-12" r="5" />
+    <rect class="detail-light" x="-232" y="4" width="80" height="10" rx="4" />
+    <!-- 右侧抽象面板 -->
+    <rect class="screen" x="-110" y="-24" width="260" height="48" rx="8" />
+    <rect class="detail-light" x="-100" y="-16" width="100" height="10" rx="4" />
+    <rect class="detail-light" x="-100" y="2" width="140" height="10" rx="4" />
+    <rect class="detail-light" x="20" y="-16" width="100" height="10" rx="4" />
+  </g>
+
+  <!-- ========== 电路连线（带动画） ========== -->
+
+  <!-- 左侧设备到中央 -->
   <path class="wire"
-        d="M 300 150 L 300 80 L 650 80 L 650 190" />
+        d="M 330 60 L 330 150" />
   <path class="wire wire-slow"
-        d="M 360 210 L 360 260 L 520 260 L 520 190" />
+        d="M 330 210 L 330 250 L 560 250 L 560 260" />
   <path class="wire"
-        d="M 260 430 L 260 360 L 520 360 L 520 310" />
-
-  <!-- 右侧到中心 -->
+        d="M 260 290 L 520 290 L 520 260" />
   <path class="wire wire-slow"
-        d="M 1300 150 L 1300 80 L 950 80 L 950 190" />
+        d="M 380 390 L 380 350 L 520 350 L 520 300" />
   <path class="wire"
-        d="M 1220 260 L 1220 220 L 1080 220 L 1080 190" />
+        d="M 160 360 L 200 360 L 200 320 L 520 320" />
+
+  <!-- 右侧设备到中央 -->
   <path class="wire wire-slow"
-        d="M 1380 430 L 1380 360 L 1080 360 L 1080 310" />
-
-  <!-- 底部横向连接条 -->
+        d="M 1270 60 L 1270 150" />
   <path class="wire"
-        d="M 260 500 L 1340 500" />
+        d="M 1270 210 L 1270 250 L 1040 250 L 1040 260" />
+  <path class="wire wire-slow"
+        d="M 1350 310 L 1080 310 L 1080 270" />
+  <path class="wire"
+        d="M 1230 440 L 1230 380 L 1080 380 L 1080 300" />
 
-  <!-- ========= 节点小圆点（呼吸动画） ========= -->
-  <circle class="node" cx="300" cy="150" r="8" />
-  <circle class="node node-alt" cx="360" cy="210" r="8" />
-  <circle class="node" cx="260" cy="430" r="8" />
+  <!-- 机架服务器连线 -->
+  <path class="wire wire-slow"
+        d="M 800 480 L 800 400 L 800 260" />
 
-  <circle class="node node-alt" cx="1300" cy="150" r="8" />
-  <circle class="node" cx="1220" cy="260" r="8" />
-  <circle class="node node-alt" cx="1380" cy="430" r="8" />
+  <!-- 顶部总线 -->
+  <path class="wire"
+        d="M 260 60 L 1340 60 L 1340 150" />
 
-  <circle class="node" cx="650" cy="80" r="8" />
-  <circle class="node node-alt" cx="950" cy="80" r="8" />
-  <circle class="node" cx="520" cy="260" r="8" />
-  <circle class="node node-alt" cx="1080" cy="220" r="8" />
-  <circle class="node" cx="520" cy="360" r="8" />
-  <circle class="node node-alt" cx="1080" cy="360" r="8" />
+  <!-- ========== 节点小圆点（呼吸动画） ========== -->
+
+  <!-- 左侧节点 -->
+  <circle class="node" cx="330" cy="150" r="8" />
+  <circle class="node node-alt" cx="330" cy="210" r="8" />
+  <circle class="node" cx="260" cy="290" r="8" />
+  <circle class="node node-alt" cx="380" cy="350" r="8" />
+  <circle class="node" cx="160" cy="360" r="8" />
+
+  <!-- 右侧节点 -->
+  <circle class="node node-alt" cx="1270" cy="150" r="8" />
+  <circle class="node" cx="1270" cy="210" r="8" />
+  <circle class="node node-alt" cx="1350" cy="310" r="8" />
+  <circle class="node" cx="1230" cy="380" r="8" />
+
+  <!-- 中央 / 底部节点 -->
+  <circle class="node" cx="560" cy="250" r="8" />
+  <circle class="node node-alt" cx="520" cy="260" r="8" />
+  <circle class="node" cx="1080" cy="270" r="8" />
+  <circle class="node node-alt" cx="1040" cy="260" r="8" />
+  <circle class="node" cx="800" cy="400" r="8" />
+  <circle class="node node-alt" cx="800" cy="60" r="8" />
 
 </svg>
